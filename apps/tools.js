@@ -72,7 +72,7 @@ export class kkkTools extends plugin {
       priority: isDefaultTool() ? -Infinity : Config.app.priority,
       rule: [
         ...generateRules(), // 动态生成的平台规则
-        ...(isVideoToolEnabled() ? [{ reg: /^(\[图片\])?$/, fnc: 'imageQrCode' }] : []),
+        ...(isVideoToolEnabled() ? [{ reg: /^\[图片\]$/, fnc: 'imageQrCode' }] : []),
         { reg: /^#?\d{1,2}$/, fnc: 'selectDouyinWork' },
         { reg: /^#?(解析|kkk解析|弹幕解析)/, fnc: 'prefix' }, // 解析功能规则
         { reg: /#?BGM(\d+)/, fnc: 'uploadRecord' }, // BGM上传功能规则
